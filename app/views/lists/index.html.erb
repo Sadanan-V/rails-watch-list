@@ -2,7 +2,8 @@
   <h1 class="mb-4">All Lists</h1>
   <ul>
     <% @lists.each do |list| %>
-      <li><%= link_to list.name, list_path(list) %></li>
+      <li><%= link_to list.name.upcase, list_path(list) %></li>
     <% end %>
   </ul>
+  <%= link_to "Add List", new_list_path, class:"btn btn-info"  %>
 </div>

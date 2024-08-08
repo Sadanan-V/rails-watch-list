@@ -1,2 +1,18 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<div class="container mt-4">
+  <h1><%= @list.name.upcase %></h1>
+
+  <h2>Current Bookmarks</h2>
+  <% @bookmarks.each do |bookmark| %>
+    <p><strong><%= bookmark.movie.title %></strong></p>
+    <ul>
+      <li><strong>Overview: </strong><%= bookmark.movie.overview %></li>
+      <li><strong>Comment: </strong><%= bookmark.comment %></li>
+      <%= link_to "Delete Bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Delete #{bookmark.movie.title}"}  %>
+    </ul>
+  <% end %>
+
+  <%= link_to "Add Bookmark", new_list_bookmark_path(@list), class:"btn btn-success" %>
+  <%= link_to "Back to Lists", lists_path, class:"btn btn-success" %>
+
+
+</div>
