@@ -11,7 +11,7 @@
       <% @lists.each do |list| %>
         <div class="card-category position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/health/wp-content/uploads/2023/10/Healthy-Breakfast-Ideas-6-Foods-To-Start-Your-Day-Ft-Image.jpg' %>)">
           <%= link_to list.name.upcase, list_path(list), class:"text-white text-decoration-none" %>
-          <%= link_to lists_path(list), data: { turbo_method: :destroy, turbo_confirm: "Want to delete #{list.name}?"} do %>
+          <%= link_to lists_path(list), data: { turbo_method: :delete, turbo_confirm: "Want to delete #{list.name}?"} do %>
             <i class="fa-solid fa-meteor position-absolute bottom-0 end-0 pb-2 px-2" style="color: #ffffff;"></i>
           <% end %>
         </div>
