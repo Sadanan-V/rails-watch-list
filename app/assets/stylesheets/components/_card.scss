@@ -1,8 +1,17 @@
+.container
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
+
+.movie-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
 
 .card-category {
   background-size: cover;
@@ -19,6 +28,30 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
 }
+.card-category-link{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.card-tags {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  width: 80%;
+  span {
+    background: rgb(207, 61, 61);
+    font-size: .7em;
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
+  a {
+    color: white;
+  }
+}
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

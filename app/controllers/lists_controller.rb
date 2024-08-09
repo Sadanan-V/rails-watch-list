@@ -21,6 +21,12 @@ class ListsController < ApplicationController
     end
   end
 
+  def destroy
+    @list = List.find(:id)
+    @list.destroy
+    redirect_to lists_path
+  end
+
   private
   def list_params
     params.require(:list).permit(:name, :photo)
